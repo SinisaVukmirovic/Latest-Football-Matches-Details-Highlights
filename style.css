@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    font-family: 'Verdana', sans-serif;
+    height: 100vh;
+}
+
+.matches {
+    position: absolute;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    top: 0; bottom: 0; left: 0; right: 0;
+    box-shadow: inset 0 0 4rem #fff;
+    opacity: 0;
+    z-index: -2;
+    pointer-events: none;
+    transition: all .5s;
+}
+    .matches h2 {
+        color: #fff;
+        font-size: 2rem;
+    }
+
+.matches.chosen {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: all;
+}
+
+.matches a {
+    color: yellow;
+}
+
+.leagues {
+    display: flex;
+    flex-wrap: wrap;
+}
+    .leagues div {
+        width: 50%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s;
+        color: #fff;
+        border: solid .3rem #fff;
+        cursor: pointer;
+        box-shadow: inset 0 0 2rem #fff;
+    }
+        .leagues div h3 {
+            font-size: 1.2rem;
+            padding: .5rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+    .leagues div:nth-child(1) {
+        background-image: url(img/bgs/ENGLANDPremierLeague.jpg);
+        background-size: cover;
+    }
+    .leagues div:nth-child(2) {
+        background-image: url(img/bgs/SPAINLaLiga.jpg);
+        background-size: cover;
+    }
+    .leagues div:nth-child(3) {
+        background-image: url(img/bgs/ITALYSerieA.jpg);
+        background-size: cover;
+    }
+    .leagues div:nth-child(4) {
+        background-image: url(img/bgs/GERMANYBundesliga.jpg);
+        background-size: cover;
+    }
+
+    .leagues div .logo {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background: #fff;
+        margin-bottom: 1rem;
+        box-shadow: 0 0 2rem #fff;
+    }
+        .logo img {
+            width: 100%;
+        }
+
+.js-match {
+    background: rgba(0, 0, 0, .5);
+    padding: .5rem 2rem;
+    margin: .5rem;
+    border: solid 1px powderblue;
+}
+    .js-match h4 {
+        font-size: 1.4rem;
+        color: #fff;
+    }
+
+/* media queries for smaller screens */
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+    html {
+        font-size: 10px;
+    }
+    .matches {
+        box-shadow: inset 0 0 2rem #fff;
+    }
+    .leagues div {
+        padding: 1rem 2rem;
+        width: 100%;
+        height: 25vh;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .leagues div .logo {
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+}
