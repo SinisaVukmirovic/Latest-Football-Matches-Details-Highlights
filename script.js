@@ -33,6 +33,7 @@ leagues.forEach(league => {
 
                         matches.style.backgroundImage = `url(img/bgs/${chosenImage}.jpg)`;
                         matches.style.backgroundSize = 'cover';
+                        matches.style.backgroundPosition = 'center';
 
                         matches.addEventListener('click', () => {
                             matches.classList.remove('chosen');
